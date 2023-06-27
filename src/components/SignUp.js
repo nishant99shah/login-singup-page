@@ -79,16 +79,13 @@ const SignUp = () => {
             </h2>
 
             <div className="mb-4">
-              <label
-                className="inline-block text-gray-700 text-sm font-semibold mb-2 after:content-['*'] after:ml-0.5 after:text-red-500"
-                htmlFor="name"
-              >
+              <label className="label" htmlFor="name">
                 Full Name
               </label>
               <input
-                className={`border text-gray-700 rounded-md px-4 py-2 w-full focus:outline-none focus:border-indigo-600 ${
+                className={`input ${
                   isSubmitted && formData.name.trim() === ""
-                    ? "border-red-500 placeholder:text-red-400 focus:placeholder:text-gray-400"
+                    ? "input-error"
                     : "border-gray-400"
                 }`}
                 type="text"
@@ -105,19 +102,16 @@ const SignUp = () => {
               )}
             </div>
             <div className="mb-4">
-              <label
-                className="inline-block text-gray-700 text-sm font-semibold mb-2 after:content-['*'] after:ml-0.5 after:text-red-500"
-                htmlFor="email"
-              >
+              <label className="label" htmlFor="email">
                 Email
               </label>
               <input
-                className={`border text-gray-700 rounded-md px-4 py-2 w-full focus:outline-none focus:border-indigo-600 ${
+                className={`input ${
                   isSubmitted &&
                   !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(
                     formData.email
                   )
-                    ? "border-red-500 placeholder:text-red-400 focus:placeholder:text-gray-400"
+                    ? "input-error"
                     : "border-gray-400"
                 }`}
                 type="email"
@@ -142,16 +136,13 @@ const SignUp = () => {
               )}
             </div>
             <div className="mb-4">
-              <label
-                className="inline-block text-gray-700 text-sm font-semibold mb-2 after:content-['*'] after:ml-0.5 after:text-red-500"
-                htmlFor="password"
-              >
+              <label className="label" htmlFor="password">
                 Password
               </label>
               <input
-                className={`border text-gray-700 rounded-md px-4 py-2 w-full focus:outline-none focus:border-indigo-600 ${
+                className={`input ${
                   isSubmitted && formData.password.length < 6
-                    ? "border-red-500 placeholder:text-red-400 focus:placeholder:text-gray-400"
+                    ? "input-error"
                     : "border-gray-400"
                 }`}
                 type="password"
@@ -168,16 +159,13 @@ const SignUp = () => {
               )}
             </div>
             <div className="mb-6">
-              <label
-                className="inline-block text-gray-700 text-sm font-semibold mb-2 after:content-['*'] after:ml-0.5 after:text-red-500"
-                htmlFor="confirmPassword"
-              >
+              <label className="label" htmlFor="confirmPassword">
                 Confirm Password
               </label>
               <input
-                className={`border text-gray-700 rounded-md px-4 py-2 w-full focus:outline-none focus:border-indigo-600 ${
+                className={`input ${
                   isSubmitted && formData.password !== formData.confirmPassword
-                    ? "border-red-500 placeholder:text-red-400 focus:placeholder:text-gray-400"
+                    ? "input-error"
                     : "border-gray-400 "
                 }`}
                 type="password"
@@ -206,7 +194,7 @@ const SignUp = () => {
             <h2 className="text-gray-700 font-semibold flex flex-col items-center lg:block lg:text-center">
               Already have an account ?
               <span
-                className="ml-2 text-indigo-400 hover:text-indigo-600 inline-block hover:cursor-pointer"
+                className="ml-2 text-indigo-400 hover:text-indigo-600 inline-block hover:cursor-pointer hover:underline hover:underline-offset-2"
                 onClick={() => navigate("/login")}
               >
                 Login here

@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 body {
@@ -15,4 +15,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.label {
+  @apply inline-block text-gray-700 text-sm font-semibold mb-2 after:content-['*'] after:ml-0.5 after:text-red-500;
+}
+
+.input {
+  @apply border text-gray-700 rounded-md px-4 py-2 w-full focus:outline-none focus:border-indigo-600;
+}
+
+.input-error {
+  @apply border-red-500 placeholder:text-red-400 focus:placeholder:text-gray-400;
 }
