@@ -1,6 +1,6 @@
 # Sign Up & Sign In Pages
 
-This project is created using React & Tailwind CSS
+This project is created using React & Tailwind CSS. It is also responsive for mobile and tablets.
 Both the pages are created with full form validation support and also used React Context API for storing instant user details
 
 -> Sign Up Page
