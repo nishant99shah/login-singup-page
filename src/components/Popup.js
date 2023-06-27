@@ -1,7 +1,7 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
 
-const Popup = ({message, onClose}) => {
+const Popup = ({message, login = true, onClose}) => {
   const navigate = useNavigate();
 
   return (
@@ -32,12 +32,16 @@ const Popup = ({message, onClose}) => {
         <p className="text-lg text-gray-600 font-medium text-center mb-2">
           {message}
         </p>
-        <p
-          className="text-lg font-bold text-indigo-500 hover:text-indigo-600 text-center hover:cursor-pointer"
-          onClick={() => navigate("/login")}
-        >
-          Login Here
-        </p>
+        {login ? (
+          <p
+            className="text-lg font-bold text-indigo-500 hover:text-indigo-600 text-center hover:cursor-pointer"
+            onClick={() => navigate("/login")}
+          >
+            Login Here
+          </p>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

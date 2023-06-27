@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import {ReactComponent as LoginSvg} from "../svg/login.svg";
+import {ReactComponent as SignUpSvg} from "../svg/signup.svg";
 import {useNavigate} from "react-router-dom";
 import {UserContext} from "../UserContext";
 import Popup from "./Popup";
@@ -57,11 +57,8 @@ const SignUp = () => {
     };
 
     addUser(newUser);
+    console.log(newUser, "sign up");
     setShowPopup(true);
-  };
-
-  const closePopup = () => {
-    setShowPopup(false);
   };
 
   return (
@@ -69,7 +66,7 @@ const SignUp = () => {
       {/* Left Section */}
       <div className=" w-3/6 h-full hidden md:block flex justify-center ">
         <div className="w-full lg:w-5/6 mx-auto">
-          <LoginSvg />
+          <SignUpSvg />
         </div>
       </div>
 
@@ -201,7 +198,10 @@ const SignUp = () => {
               Sign up
             </button>
             {showPopup && (
-              <Popup message="User created successfully" onClose={closePopup} />
+              <Popup
+                message="User created successfully"
+                onClose={() => setShowPopup(false)}
+              />
             )}
             <h2 className="text-gray-700 font-semibold flex flex-col items-center lg:block lg:text-center">
               Already have an account ?
